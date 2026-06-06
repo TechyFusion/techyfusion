@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Script from "next/script";
 import {
   ChevronDown,
   Star,
@@ -152,11 +153,31 @@ const faqs = [
 
 /* ─────────────────────── Component ─────────────────────── */
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "TechyFusion",
+  url: "https://techyfusion.in",
+  logo: "https://techyfusion.in/logo.png",
+  sameAs: [
+    "https://www.linkedin.com/company/techyfusion",
+    "https://github.com/TechyFusion",
+  ],
+};
+
 export default function HomePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <div>
+      <Script
+        id="organization-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema),
+        }}
+      />
+
       {/* ═══════════════════════════════════════════════════
           Section 1 — Hero (Dark Sky + Stars + Comets)
           ═══════════════════════════════════════════════════ */}
