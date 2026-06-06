@@ -23,7 +23,7 @@ export default function ServicesPage() {
       title: "Web Development",
       description: "Fast, custom websites and web applications tailored to your business model.",
       icon: Code,
-      color: "text-brand-cyan",
+      color: "text-accent-blue",
       bgGradient: "from-brand-cyan/20 to-transparent",
       features: [
         "SaaS product architectures",
@@ -40,7 +40,7 @@ export default function ServicesPage() {
       title: "Mobile App Development",
       description: "Intuitive, high-performance apps built for iOS and Android devices.",
       icon: Smartphone,
-      color: "text-brand-indigo",
+      color: "text-accent-blue",
       bgGradient: "from-brand-indigo/20 to-transparent",
       features: [
         "Native Android & iOS engineering",
@@ -57,7 +57,7 @@ export default function ServicesPage() {
       title: "AI & Automation Solutions",
       description: "Integrating intelligent networks to automate administrative pipelines.",
       icon: Cpu,
-      color: "text-brand-purple",
+      color: "text-accent-blue",
       bgGradient: "from-brand-purple/20 to-transparent",
       features: [
         "OpenAI & GPT agent architectures",
@@ -74,7 +74,7 @@ export default function ServicesPage() {
       title: "Custom Software Development",
       description: "Tailor-made software designed to align perfectly with your operations.",
       icon: Layers,
-      color: "text-brand-pink",
+      color: "text-accent-blue",
       bgGradient: "from-brand-pink/20 to-transparent",
       features: [
         "Enterprise Resource Planning (ERP)",
@@ -91,7 +91,7 @@ export default function ServicesPage() {
       title: "Cloud & DevOps Services",
       description: "Secure, reliable, and automated infrastructure frameworks.",
       icon: Server,
-      color: "text-brand-blue",
+      color: "text-accent-blue",
       bgGradient: "from-brand-blue/20 to-transparent",
       features: [
         "AWS & Azure environment builds",
@@ -131,17 +131,17 @@ export default function ServicesPage() {
       {/* Services Header */}
       <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         <div className="space-y-6 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-brand-cyan tracking-wide">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/10 text-xs font-semibold text-accent-blue tracking-wide">
             <Sparkles className="w-3.5 h-3.5" />
             Our Technical Expertise
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+          <h1 className="text-4xl sm:text-5xl font-[family-name:var(--font-heading)] italic font-normal text-charcoal tracking-tight">
             Services Engineered for Your{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-indigo to-brand-purple">
+            <span className="text-accent-blue">
               Digital Growth
             </span>
           </h1>
-          <p className="text-slate-300 text-lg md:text-xl font-light leading-relaxed">
+          <p className="text-text-muted text-lg md:text-xl font-light leading-relaxed">
             From design mockups to robust production applications, we build solutions that deliver performance, security, and scalability.
           </p>
         </div>
@@ -155,7 +155,7 @@ export default function ServicesPage() {
             <div
               key={service.id}
               id={service.id}
-              className={`glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden transition-all duration-300 border-l-4 ${
+              className={`card-soft rounded-3xl p-8 md:p-12 relative overflow-hidden transition-all duration-300 border-l-4 ${
                 service.id === "web"
                   ? "border-l-brand-cyan"
                   : service.id === "mobile"
@@ -175,14 +175,14 @@ export default function ServicesPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
                 {/* Info block */}
                 <div className="lg:col-span-5 space-y-6">
-                  <div className={`w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center ${service.color}`}>
+                  <div className={`w-14 h-14 rounded-2xl bg-black/5 flex items-center justify-center ${service.color}`}>
                     <IconComp className="w-8 h-8" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-white">{service.title}</h2>
-                  <p className="text-slate-300 text-base leading-relaxed">{service.description}</p>
+                  <h2 className="text-2xl md:text-3xl font-[family-name:var(--font-inter)] font-bold text-charcoal">{service.title}</h2>
+                  <p className="text-text-muted text-base leading-relaxed">{service.description}</p>
                   
                   {/* Highlight Metric */}
-                  <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-sm font-semibold text-white">
+                  <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-black/5 border border-black/10 text-sm font-semibold text-charcoal">
                     <Zap className="w-4 h-4 text-amber-400" />
                     <span>{service.metric}</span>
                   </div>
@@ -190,11 +190,11 @@ export default function ServicesPage() {
 
                 {/* Features block */}
                 <div className="lg:col-span-4 space-y-4">
-                  <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest">What we deliver</h3>
-                  <ul className="space-y-3 text-slate-300">
+                  <h3 className="text-sm font-[family-name:var(--font-inter)] font-semibold text-text-muted uppercase tracking-widest">What we deliver</h3>
+                  <ul className="space-y-3 text-text-muted">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2.5 text-sm">
-                        <Check className="w-5 h-5 text-brand-cyan flex-shrink-0 mt-0.5" />
+                        <Check className="w-5 h-5 text-accent-blue flex-shrink-0 mt-0.5" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -202,14 +202,14 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Tech & CTA block */}
-                <div className="lg:col-span-3 space-y-6 bg-slate-950/40 p-6 rounded-2xl border border-white/5">
+                <div className="lg:col-span-3 space-y-6 bg-cream p-6 rounded-2xl border border-border-soft">
                   <div className="space-y-3">
-                    <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Technologies</h3>
+                    <h3 className="text-xs font-[family-name:var(--font-inter)] font-semibold text-text-muted uppercase tracking-widest">Technologies</h3>
                     <div className="flex flex-wrap gap-2">
                       {service.technologies.map((tech, idx) => (
                         <span
                           key={idx}
-                          className="px-2.5 py-1 bg-white/5 border border-white/10 rounded-lg text-xs text-slate-300"
+                          className="px-2.5 py-1 bg-black/5 border border-black/10 rounded-lg text-xs text-text-muted"
                         >
                           {tech}
                         </span>
@@ -219,7 +219,7 @@ export default function ServicesPage() {
                   <div className="pt-2">
                     <Link
                       href="/book"
-                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-brand-cyan to-brand-indigo text-white font-bold text-sm hover:opacity-95 transition-opacity"
+                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-accent-blue hover:bg-accent-blue-hover text-white font-bold text-sm transition-colors duration-200"
                     >
                       Book Free Setup
                       <ArrowRight className="w-4 h-4" />
@@ -234,17 +234,17 @@ export default function ServicesPage() {
 
       {/* Bottom Conversion Area */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-        <div className="glass-card rounded-3xl p-8 md:p-12 text-center space-y-8 relative overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-brand-indigo/10 rounded-full blur-[80px] pointer-events-none" />
+        <div className="card-soft rounded-3xl p-8 md:p-12 text-center space-y-8 relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-accent-blue/10 rounded-full blur-[80px] pointer-events-none" />
           
-          <h2 className="text-3xl font-extrabold text-white">Need a Specialized Custom Solution?</h2>
-          <p className="text-slate-300 text-base max-w-xl mx-auto">
+          <h2 className="text-3xl font-[family-name:var(--font-inter)] font-bold text-charcoal">Need a Specialized Custom Solution?</h2>
+          <p className="text-text-muted text-base max-w-xl mx-auto">
             Our engineers excel at solving edge cases, custom data syncing, and API scaling. Let&apos;s map out your systems together.
           </p>
           <div>
             <Link
               href="/book"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-brand-cyan via-brand-indigo to-brand-purple text-white font-bold text-base hover:shadow-[0_0_30px_rgba(99,102,241,0.3)] hover:scale-[1.02] transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent-blue hover:bg-accent-blue-hover text-white font-bold text-base transition-colors duration-200"
             >
               <Users className="w-5 h-5" />
               Consult Our Tech Leads
