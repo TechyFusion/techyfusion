@@ -34,36 +34,36 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: "Hitesh Sharma",
+      name: "Amit Kashyap",
       role: "Founder & Chief Executive",
       bio: "Tech entrepreneur and product designer with 8+ years leading software architecture sprints and client consultations.",
       linkedin: "https://linkedin.com",
       github: "https://github.com",
-      initial: "HS"
+      initial: "AK"
     },
     {
-      name: "Alex Mercer",
+      name: "Rahul Sharma",
       role: "CTO & Principal Architect",
       bio: "Former cloud infrastructure lead specializing in distributed Node/Postgres systems and scalable AWS integrations.",
       linkedin: "https://linkedin.com",
       github: "https://github.com",
-      initial: "AM"
+      initial: "RS"
     },
     {
-      name: "Dr. Sarah Chen",
+      name: "Abhay Singh",
       role: "Head of Artificial Intelligence",
       bio: "Ph.D. in NLP and AI systems. Directs our GPT fine-tuning pipeline implementations and custom agent orchestration designs.",
       linkedin: "https://linkedin.com",
       github: "https://github.com",
-      initial: "SC"
+      initial: "AS"
     },
     {
-      name: "Mia Johansson",
+      name: "Anshika Sharma",
       role: "Lead UI/UX Experience Designer",
       bio: "Figma master focusing on conversion-driven layouts, responsive web systems, and interactive interface animations.",
       linkedin: "https://linkedin.com",
       github: "https://github.com",
-      initial: "MJ"
+      initial: "AS"
     }
   ];
 
@@ -175,7 +175,7 @@ export default function AboutPage() {
             <div key={idx} className="card-soft rounded-3xl overflow-hidden group flex flex-col justify-between h-full transition-all duration-300">
               <div className="p-6.5 space-y-6">
                 {/* Initial Avatar Block */}
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-cyan to-brand-indigo flex items-center justify-center text-white font-extrabold text-xl shadow-md group-hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 rounded-2xl bg-accent-blue/10 border border-accent-blue/20 flex items-center justify-center text-accent-blue font-extrabold text-xl shadow-sm group-hover:scale-105 group-hover:bg-accent-blue group-hover:text-white transition-all duration-300">
                   {member.initial}
                 </div>
 

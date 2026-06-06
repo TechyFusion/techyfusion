@@ -21,7 +21,7 @@ export default function BlogPage() {
       title: "Why Next.js App Router is the Standard for Modern Web Applications",
       excerpt: "An in-depth breakdown of server components, routing architectures, streaming SSR, and SEO efficiency gains when upgrading to Next.js.",
       category: "engineering",
-      author: "Alex Mercer",
+      author: "Rahul Sharma",
       date: "May 28, 2026",
       readTime: "6 min read",
       color: "text-accent-blue"
@@ -30,7 +30,7 @@ export default function BlogPage() {
       title: "Building Context-Aware Chatbots: Beyond Simple OpenAI API Prompts",
       excerpt: "How to combine vector databases (like pgvector/Pinecone) and LangChain orchestration to create bots that accurately reference corporate manuals.",
       category: "ai",
-      author: "Dr. Sarah Chen",
+      author: "Abhay Singh",
       date: "May 15, 2026",
       readTime: "8 min read",
       color: "text-accent-blue"
@@ -39,7 +39,7 @@ export default function BlogPage() {
       title: "Conversion-Driven UI Design: How Simple Visual Hierarchies Increase Sales",
       excerpt: "Practical rules for mobile CTA button placements, visual feedback cues, card design, and micro-interactions that double landing page conversion rates.",
       category: "design",
-      author: "Mia Johansson",
+      author: "Anshika Sharma",
       date: "May 02, 2026",
       readTime: "5 min read",
       color: "text-accent-blue"
@@ -48,7 +48,7 @@ export default function BlogPage() {
       title: "How to Build an MVP SaaS in 6 Weeks: The Agile Scoping Playbook",
       excerpt: "Prioritizing feature components, designing core data relational structures, and setting up Stripe billing early to hit production on schedule.",
       category: "business",
-      author: "Hitesh Sharma",
+      author: "Amit Kashyap",
       date: "Apr 20, 2026",
       readTime: "7 min read",
       color: "text-accent-blue"
@@ -57,7 +57,7 @@ export default function BlogPage() {
       title: "Securing Node.js APIs: Essential Authentication and Rate Limiting Guides",
       excerpt: "Step-by-step instructions to protect server routes, check authorization JWT cookies, set up Redis rate-limiting, and block security vulnerabilities.",
       category: "engineering",
-      author: "Alex Mercer",
+      author: "Rahul Sharma",
       date: "Apr 05, 2026",
       readTime: "10 min read",
       color: "text-accent-blue"
@@ -66,7 +66,7 @@ export default function BlogPage() {
       title: "The Rise of AI Voice Agents: Automating Inbound Sales Calendars",
       excerpt: "Integrating Twilio voice pipelines with OpenAI GPT audio processing models to handle phone inquiries and schedule appointments automatically.",
       category: "ai",
-      author: "Dr. Sarah Chen",
+      author: "Abhay Singh",
       date: "Mar 18, 2026",
       readTime: "9 min read",
       color: "text-accent-blue"
