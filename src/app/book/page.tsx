@@ -64,17 +64,17 @@ export default function BookConsultationPage() {
       {/* Page Header */}
       <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
         <div className="space-y-6 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-brand-cyan tracking-wide">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/10 text-xs font-semibold text-accent-blue tracking-wide">
             <Sparkles className="w-3.5 h-3.5" />
             Direct Consultation
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+          <h1 className="text-4xl sm:text-5xl font-[family-name:var(--font-heading)] italic font-normal text-charcoal tracking-tight">
             Schedule a Free{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-indigo to-brand-purple">
+            <span className="text-accent-blue">
               Discovery Call
             </span>
           </h1>
-          <p className="text-slate-300 text-base md:text-lg font-light leading-relaxed">
+          <p className="text-text-muted text-base md:text-lg font-light leading-relaxed">
             Select an open date and timeslot below to secure a 30-minute system alignment call with our engineering leads.
           </p>
         </div>
@@ -82,7 +82,7 @@ export default function BookConsultationPage() {
 
       {/* Main interactive scheduler shell */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6">
-        <div className="glass-card rounded-3xl p-8 relative overflow-hidden">
+        <div className="card-soft rounded-3xl p-8 relative overflow-hidden">
           {isBooked ? (
             /* Booking confirmation */
             <div className="py-12 flex flex-col items-center justify-center text-center space-y-6">
@@ -91,26 +91,26 @@ export default function BookConsultationPage() {
               </div>
               
               <div className="space-y-2">
-                <h3 className="text-2xl font-bold text-white">Discovery Call Scheduled!</h3>
-                <p className="text-slate-300 text-sm leading-relaxed max-w-md mx-auto">
+                <h3 className="text-2xl font-[family-name:var(--font-inter)] font-semibold text-charcoal">Discovery Call Scheduled!</h3>
+                <p className="text-text-muted text-sm leading-relaxed max-w-md mx-auto">
                   Excellent, {formState.name}. We have registered your session. A calendar invite with meeting files has been dispatched to {formState.email}.
                 </p>
               </div>
 
               {/* Receipt details */}
-              <div className="bg-slate-950/60 border border-white/10 rounded-2xl p-6 w-full max-w-md text-left space-y-4">
-                <h4 className="text-xs font-extrabold text-slate-400 uppercase tracking-widest border-b border-white/5 pb-2">Session Details:</h4>
-                <div className="space-y-3.5 text-sm text-slate-300">
+              <div className="bg-white/90 border border-black/10 rounded-2xl p-6 w-full max-w-md text-left space-y-4">
+                <h4 className="text-xs font-extrabold text-text-muted uppercase tracking-widest border-b border-border-soft pb-2">Session Details:</h4>
+                <div className="space-y-3.5 text-sm text-text-muted">
                   <div className="flex items-center gap-3">
-                    <Calendar className="w-5 h-5 text-brand-cyan" />
+                    <Calendar className="w-5 h-5 text-accent-blue" />
                     <span className="font-semibold">{selectedDateLabel}</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Clock className="w-5 h-5 text-brand-indigo" />
+                    <Clock className="w-5 h-5 text-accent-blue" />
                     <span className="font-semibold">{selectedTime}</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Video className="w-5 h-5 text-brand-purple" />
+                    <Video className="w-5 h-5 text-accent-blue" />
                     <span>Google Meet (Invite contains URL)</span>
                   </div>
                 </div>
@@ -119,7 +119,7 @@ export default function BookConsultationPage() {
               <div className="pt-4">
                 <Link
                   href="/"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-sm hover:bg-white/10 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-black/5 border border-black/10 text-charcoal font-semibold text-sm hover:bg-white/10 transition-colors"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   Return Home
@@ -131,8 +131,8 @@ export default function BookConsultationPage() {
             <form onSubmit={handleBookingSubmit} className="space-y-8">
               {/* Step 1: Select Date */}
               <div className="space-y-4">
-                <h3 className="text-base font-bold text-white flex items-center gap-2">
-                  <span className="w-5 h-5 rounded-lg bg-brand-cyan/15 text-brand-cyan flex items-center justify-center text-xs">1</span>
+                <h3 className="text-base font-[family-name:var(--font-inter)] font-semibold text-charcoal flex items-center gap-2">
+                  <span className="w-5 h-5 rounded-lg bg-accent-blue/15 text-accent-blue flex items-center justify-center text-xs">1</span>
                   Select Date
                 </h3>
                 <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
@@ -146,8 +146,8 @@ export default function BookConsultationPage() {
                       }}
                       className={`p-4 rounded-xl border flex flex-col items-center justify-center transition-all ${
                         selectedDate === day.raw
-                          ? "bg-gradient-to-br from-brand-cyan to-brand-indigo border-transparent text-white shadow-md shadow-brand-indigo/15 scale-[1.02]"
-                          : "bg-slate-900/40 border-white/10 text-slate-300 hover:bg-slate-900/80 hover:text-white"
+                          ? "bg-accent-blue border-transparent text-white shadow-md shadow-accent-blue/15 scale-[1.02]"
+                          : "bg-white/40 border-black/10 text-text-muted hover:bg-white/80 hover:text-charcoal"
                       }`}
                     >
                       <span className="text-[10px] uppercase font-bold tracking-wider opacity-75">{day.weekday}</span>
@@ -160,8 +160,8 @@ export default function BookConsultationPage() {
               {/* Step 2: Select Time */}
               {selectedDate && (
                 <div className="space-y-4 transition-all duration-300 animate-fadeIn">
-                  <h3 className="text-base font-bold text-white flex items-center gap-2">
-                    <span className="w-5 h-5 rounded-lg bg-brand-indigo/15 text-brand-indigo flex items-center justify-center text-xs">2</span>
+                  <h3 className="text-base font-[family-name:var(--font-inter)] font-semibold text-charcoal flex items-center gap-2">
+                    <span className="w-5 h-5 rounded-lg bg-accent-blue/15 text-accent-blue flex items-center justify-center text-xs">2</span>
                     Select Session Time (EST)
                   </h3>
                   <div className="grid grid-cols-2 sm:grid-cols-6 gap-3">
@@ -172,8 +172,8 @@ export default function BookConsultationPage() {
                         onClick={() => setSelectedTime(slot)}
                         className={`py-3 px-1 rounded-xl border text-xs font-semibold text-center tracking-wide transition-all ${
                           selectedTime === slot
-                            ? "bg-gradient-to-br from-brand-cyan to-brand-indigo border-transparent text-white shadow-md shadow-brand-indigo/15 scale-[1.01]"
-                            : "bg-slate-900/40 border-white/10 text-slate-350 hover:bg-slate-900/80 hover:text-white"
+                            ? "bg-accent-blue border-transparent text-white shadow-md shadow-accent-blue/15 scale-[1.01]"
+                            : "bg-white/40 border-black/10 text-text-muted hover:bg-white/80 hover:text-charcoal"
                         }`}
                       >
                         {slot}
@@ -185,16 +185,16 @@ export default function BookConsultationPage() {
 
               {/* Step 3: Intake Details */}
               {selectedDate && selectedTime && (
-                <div className="space-y-5 transition-all duration-300 animate-fadeIn pt-4 border-t border-white/5">
-                  <h3 className="text-base font-bold text-white flex items-center gap-2">
-                    <span className="w-5 h-5 rounded-lg bg-brand-purple/15 text-brand-purple flex items-center justify-center text-xs">3</span>
+                <div className="space-y-5 transition-all duration-300 animate-fadeIn pt-4 border-t border-border-soft">
+                  <h3 className="text-base font-[family-name:var(--font-inter)] font-semibold text-charcoal flex items-center gap-2">
+                    <span className="w-5 h-5 rounded-lg bg-accent-blue/15 text-accent-blue flex items-center justify-center text-xs">3</span>
                     Intake Information
                   </h3>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                     <div className="space-y-1">
-                      <label htmlFor="user-name" className="text-[10px] text-slate-300 font-semibold uppercase tracking-wider flex items-center gap-1">
-                        <User className="w-3.5 h-3.5 text-brand-cyan" /> Name
+                      <label htmlFor="user-name" className="text-[10px] text-text-muted font-semibold uppercase tracking-wider flex items-center gap-1">
+                        <User className="w-3.5 h-3.5 text-accent-blue" /> Name
                       </label>
                       <input
                         type="text"
@@ -203,13 +203,13 @@ export default function BookConsultationPage() {
                         value={formState.name}
                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                         placeholder="John Doe"
-                        className="w-full bg-slate-950/80 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-cyan"
+                        className="w-full bg-cream/80 border border-black/10 rounded-xl px-4 py-2.5 text-sm text-charcoal focus:outline-none focus:border-accent-blue"
                       />
                     </div>
 
                     <div className="space-y-1">
-                      <label htmlFor="user-email" className="text-[10px] text-slate-300 font-semibold uppercase tracking-wider flex items-center gap-1">
-                        <Mail className="w-3.5 h-3.5 text-brand-indigo" /> Email
+                      <label htmlFor="user-email" className="text-[10px] text-text-muted font-semibold uppercase tracking-wider flex items-center gap-1">
+                        <Mail className="w-3.5 h-3.5 text-accent-blue" /> Email
                       </label>
                       <input
                         type="email"
@@ -218,13 +218,13 @@ export default function BookConsultationPage() {
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                         placeholder="john@example.com"
-                        className="w-full bg-slate-950/80 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-cyan"
+                        className="w-full bg-cream/80 border border-black/10 rounded-xl px-4 py-2.5 text-sm text-charcoal focus:outline-none focus:border-accent-blue"
                       />
                     </div>
 
                     <div className="space-y-1">
-                      <label htmlFor="user-org" className="text-[10px] text-slate-300 font-semibold uppercase tracking-wider flex items-center gap-1">
-                        <Briefcase className="w-3.5 h-3.5 text-brand-purple" /> Organization
+                      <label htmlFor="user-org" className="text-[10px] text-text-muted font-semibold uppercase tracking-wider flex items-center gap-1">
+                        <Briefcase className="w-3.5 h-3.5 text-accent-blue" /> Organization
                       </label>
                       <input
                         type="text"
@@ -232,13 +232,13 @@ export default function BookConsultationPage() {
                         value={formState.org}
                         onChange={(e) => setFormState({ ...formState, org: e.target.value })}
                         placeholder="Acme Systems Inc."
-                        className="w-full bg-slate-950/80 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-cyan"
+                        className="w-full bg-cream/80 border border-black/10 rounded-xl px-4 py-2.5 text-sm text-charcoal focus:outline-none focus:border-accent-blue"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-1">
-                    <label htmlFor="user-details" className="text-[10px] text-slate-300 font-semibold uppercase tracking-wider">Brief Project Overview</label>
+                    <label htmlFor="user-details" className="text-[10px] text-text-muted font-semibold uppercase tracking-wider">Brief Project Overview</label>
                     <textarea
                       id="user-details"
                       rows={3}
@@ -246,13 +246,13 @@ export default function BookConsultationPage() {
                       value={formState.details}
                       onChange={(e) => setFormState({ ...formState, details: e.target.value })}
                       placeholder="Help us prepare by describing your goals, tech stack, and general constraints..."
-                      className="w-full bg-slate-950/80 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-cyan resize-none"
+                      className="w-full bg-cream/80 border border-black/10 rounded-xl px-4 py-2.5 text-sm text-charcoal focus:outline-none focus:border-accent-blue resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-xl bg-gradient-to-r from-brand-cyan via-brand-indigo to-brand-purple text-white font-bold text-sm tracking-wide hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all flex items-center justify-center gap-2"
+                    className="w-full py-4 rounded-full bg-accent-blue hover:bg-accent-blue-hover text-white font-bold text-sm tracking-wide hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all flex items-center justify-center gap-2"
                   >
                     Confirm Session Scheduler
                     <ArrowRight className="w-4 h-4" />

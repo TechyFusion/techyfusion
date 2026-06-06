@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Script from "next/script";
 import {
@@ -42,11 +42,7 @@ const stars = [
   { top: "20%", left: "18%", delay: "0.9s", duration: "3.3s" },
 ];
 
-const comets = [
-  { top: "15%", left: "60%", delay: "2s", duration: "3s" },
-  { top: "35%", left: "20%", delay: "6s", duration: "2.5s" },
-  { top: "10%", left: "80%", delay: "10s", duration: "3.5s" },
-];
+
 
 const featuredProjects = [
   {
@@ -168,6 +164,37 @@ const organizationSchema = {
 
 export default function HomePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [comet, setComet] = useState<{ id: number; x: number; duration: string } | null>(null);
+
+  const shootComet = (x?: number) => {
+    const cometX = x !== undefined ? x : Math.random() * (typeof window !== "undefined" ? window.innerWidth : 1000);
+    setComet({
+      id: Date.now(),
+      x: cometX,
+      duration: `${1 + Math.random() * 0.8}s`, // Random fall duration between 1s and 1.8s
+    });
+  };
+
+  useEffect(() => {
+    // Initial shoot after 1 second
+    const initialTimeout = setTimeout(() => shootComet(), 1000);
+    
+    // Auto-shoot every 4 seconds if idle
+    const interval = setInterval(() => {
+      shootComet();
+    }, 4000);
+
+    return () => {
+      clearTimeout(initialTimeout);
+      clearInterval(interval);
+    };
+  }, []);
+
+  const handleHeroClick = (e: React.MouseEvent) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    shootComet(x); // Shoot comet exactly where the user clicked
+  };
 
   return (
     <div>
@@ -182,7 +209,10 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════
           Section 1 — Hero (Dark Sky + Stars + Comets)
           ═══════════════════════════════════════════════════ */}
-      <section className="hero-sky relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+      <section 
+        className="hero-sky relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden cursor-crosshair"
+        onClick={handleHeroClick}
+      >
         {/* Stars */}
         {stars.map((s, i) => (
           <div
@@ -197,19 +227,17 @@ export default function HomePage() {
           />
         ))}
 
-        {/* Comets */}
-        {comets.map((c, i) => (
+        {/* Interactive Comet */}
+        {comet && (
           <div
-            key={`comet-${i}`}
-            className="comet"
+            key={comet.id}
+            className="interactive-comet"
             style={{
-              top: c.top,
-              left: c.left,
-              "--comet-delay": c.delay,
-              "--comet-duration": c.duration,
+              "--comet-x": `${comet.x}px`,
+              "--comet-duration": comet.duration,
             } as React.CSSProperties}
           />
-        ))}
+        )}
 
         {/* Pill Badge */}
         <Link
@@ -316,14 +344,35 @@ export default function HomePage() {
           </div>
 
           {/* Horizontal Scrolling Reviews */}
-          <div className="mt-12 relative">
+          <div className="mt-12 relative overflow-hidden flex gap-[20px] marquee-wrapper py-2">
             {/* Edge fade gradients */}
-            <div className="absolute top-0 bottom-2 left-0 w-12 bg-gradient-to-r from-cream to-transparent z-10 pointer-events-none" />
-            <div className="absolute top-0 bottom-2 right-0 w-12 bg-gradient-to-l from-cream to-transparent z-10 pointer-events-none" />
+            <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-cream to-transparent z-10 pointer-events-none" />
+            <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-cream to-transparent z-10 pointer-events-none" />
 
-            <div className="scroll-row px-2">
+            {/* First Set */}
+            <div className="flex shrink-0 gap-[20px] animate-marquee">
               {reviews.map((review, idx) => (
-                <div key={idx} className="review-card">
+                <div key={`review-1-${idx}`} className="review-card">
+                  {/* Stars */}
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-4 h-4 fill-star-gold text-star-gold"
+                      />
+                    ))}
+                  </div>
+                  <p className="text-text-muted text-sm leading-relaxed">
+                    &ldquo;{review.text}&rdquo;
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Second Set for seamless infinite scroll */}
+            <div className="flex shrink-0 gap-[20px] animate-marquee" aria-hidden="true">
+              {reviews.map((review, idx) => (
+                <div key={`review-2-${idx}`} className="review-card">
                   {/* Stars */}
                   <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (
