@@ -1,23 +1,32 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans, EB_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSans = DM_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const ebGaramond = EB_Garamond({
+  variable: "--font-heading",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "TechyFusion - One Platform for All Your Technology Needs",
+  title: "TechyFusion — We Build Software We're Proud Of",
   description:
-    "TechyFusion provides expert Web Development, Mobile App Development, custom AI solutions, Cloud & DevOps, Custom Software, and Digital Marketing solutions under one roof.",
+    "TechyFusion is a boutique software studio crafting beautiful web apps, mobile experiences, and AI-powered solutions — from strategy to launch.",
   keywords: [
     "tech solutions",
     "web development",
@@ -37,11 +46,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
+      className={`${dmSans.variable} ${ebGaramond.variable} ${inter.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-dark-bg text-slate-100">
+      <body className="min-h-full flex flex-col bg-cream text-charcoal font-[family-name:var(--font-body)]">
         <Navbar />
-        <main className="flex-grow pt-24">{children}</main>
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
     </html>
