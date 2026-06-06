@@ -27,6 +27,11 @@ export const metadata: Metadata = {
   title: "TechyFusion — We Build Software We're Proud Of",
   description:
     "TechyFusion is a boutique software studio crafting beautiful web apps, mobile experiences, and AI-powered solutions — from strategy to launch.",
+  icons: {
+    icon: "/techy_fusion_logo-removebg-preview%20(1).png",
+    shortcut: "/techy_fusion_logo-removebg-preview%20(1).png",
+    apple: "/techy_fusion_logo-removebg-preview%20(1).png",
+  },
   keywords: [
     "tech solutions",
     "web development",

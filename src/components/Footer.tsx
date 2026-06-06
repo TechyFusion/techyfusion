@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -8,8 +9,14 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
           {/* Brand */}
           <div>
-            <div className="w-8 h-8 rounded-full bg-charcoal flex items-center justify-center mb-3">
-              <span className="text-white text-xs font-bold">T</span>
+            <div className="w-8 h-8 rounded-full bg-charcoal flex items-center justify-center mb-3 overflow-hidden">
+              <Image
+                src="/techy_fusion%20logo.png"
+                alt="TechyFusion"
+                width={32}
+                height={32}
+                className="h-full w-full object-contain"
+              />
             </div>
             <p className="font-semibold text-charcoal text-lg">TechyFusion</p>
             <p className="text-text-muted text-sm mt-1">

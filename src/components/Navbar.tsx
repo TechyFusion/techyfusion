@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -15,11 +16,6 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-
-  // Close mobile menu on route change
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -36,12 +32,20 @@ export default function Navbar() {
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-3xl">
       <div className="nav-capsule flex items-center justify-between gap-4 md:gap-6">
-        {/* Circle logo */}
+        {/* Logo */}
         <Link
           href="/"
-          className="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center shrink-0 hover:bg-white/25 transition-colors duration-200"
+          className="w-9 h-9 rounded-full bg-white flex items-center justify-center shrink-0 hover:bg-white/90 transition-colors duration-200 overflow-hidden"
+          aria-label="TechyFusion home"
         >
-          <span className="text-white font-bold text-sm">T</span>
+          <Image
+            src="/techy_fusion%20logo.png"
+            alt="TechyFusion"
+            width={36}
+            height={36}
+            className="h-full w-full object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop links */}
