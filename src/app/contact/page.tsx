@@ -76,8 +76,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div className="text-xs text-text-light font-semibold uppercase tracking-wider">Email Us</div>
-                    <a href="mailto:hello@techyfusion.com" className="hover:text-accent-blue transition-colors text-sm font-semibold">
-                      hello@techyfusion.com
+                    <a href="mailto:info@techyfusion.in" className="hover:text-accent-blue transition-colors text-sm font-semibold">
+                      info@techyfusion.in
                     </a>
                   </div>
                 </li>
@@ -87,8 +87,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div className="text-xs text-text-light font-semibold uppercase tracking-wider">Call Us</div>
-                    <a href="tel:+18005550199" className="hover:text-accent-blue transition-colors text-sm font-semibold">
-                      +1 (800) 555-0199
+                    <a href="tel:+917827092513" className="hover:text-accent-blue transition-colors text-sm font-semibold">
+                      +91-7827092513
                     </a>
                   </div>
                 </li>
@@ -99,8 +99,8 @@ export default function ContactPage() {
                   <div>
                     <div className="text-xs text-text-light font-semibold uppercase tracking-wider">Our Office</div>
                     <span className="text-sm font-semibold leading-relaxed block">
-                      100 Tech Innovation Way, Suite 400,<br />
-                      Silicon Valley, CA 94025
+                      NX One Tower T3<br />
+                      Greater Noida West - 201318
                     </span>
                   </div>
                 </li>
@@ -266,18 +266,18 @@ export default function ContactPage() {
       </section>
 
       {/* Styled Map Area Mock */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+      {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
         <div className="card-soft rounded-3xl p-4 overflow-hidden relative aspect-[21/9] w-full bg-cream border border-black/10 flex items-center justify-center text-center">
           <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
           <div className="space-y-2 relative z-10 p-6">
             <div className="w-12 h-12 rounded-xl bg-accent-blue/10 border border-accent-blue/35 flex items-center justify-center text-accent-blue mx-auto">
               <MapPin className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-[family-name:var(--font-inter)] font-semibold text-charcoal">Silicon Valley Headquarters</h3>
-            <p className="text-text-muted text-xs">Latitude: 37.4419° N, Longitude: 122.1430° W</p>
+            <h3 className="text-lg font-[family-name:var(--font-inter)] font-semibold text-charcoal">NX One tower t3</h3>
+            <p className="text-text-muted text-xs">greater noida west 201318</p>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

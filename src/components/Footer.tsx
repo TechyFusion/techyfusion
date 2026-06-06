@@ -120,7 +120,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:hello@techyfusion.com"
+                  href="mailto:info@techyfusion.in"
                   className="hover:text-charcoal transition-colors"
                 >
                   info@techyfusion.in
