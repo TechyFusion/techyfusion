@@ -146,7 +146,7 @@ export default function BookConsultationPage() {
                       }}
                       className={`p-4 rounded-xl border flex flex-col items-center justify-center transition-all ${
                         selectedDate === day.raw
-                          ? "bg-gradient-to-br from-brand-cyan to-brand-indigo border-transparent text-white shadow-md shadow-accent-blue/15 scale-[1.02]"
+                          ? "bg-accent-blue border-transparent text-white shadow-md shadow-accent-blue/15 scale-[1.02]"
                           : "bg-white/40 border-black/10 text-text-muted hover:bg-white/80 hover:text-charcoal"
                       }`}
                     >
@@ -172,8 +172,8 @@ export default function BookConsultationPage() {
                         onClick={() => setSelectedTime(slot)}
                         className={`py-3 px-1 rounded-xl border text-xs font-semibold text-center tracking-wide transition-all ${
                           selectedTime === slot
-                            ? "bg-gradient-to-br from-brand-cyan to-brand-indigo border-transparent text-white shadow-md shadow-accent-blue/15 scale-[1.01]"
-                            : "bg-white/40 border-black/10 text-slate-350 hover:bg-white/80 hover:text-charcoal"
+                            ? "bg-accent-blue border-transparent text-white shadow-md shadow-accent-blue/15 scale-[1.01]"
+                            : "bg-white/40 border-black/10 text-text-muted hover:bg-white/80 hover:text-charcoal"
                         }`}
                       >
                         {slot}
