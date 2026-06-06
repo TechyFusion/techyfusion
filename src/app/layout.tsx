@@ -24,9 +24,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "TechyFusion — We Build Software We're Proud Of",
+  title:
+    "TechyFusion | Techy Fusion - Web Development, AI Solutions & Software Company",
   description:
-    "TechyFusion is a boutique software studio crafting beautiful web apps, mobile experiences, and AI-powered solutions — from strategy to launch.",
+    "TechyFusion (Techy Fusion) is a software development company providing Web Development, Mobile App Development, AI Solutions, Cloud Services, Custom Software Development, and Digital Marketing services.",
   icons: {
     icon: "/techy_fusion_logo-removebg-preview%20(1).png",
     shortcut: "/techy_fusion_logo-removebg-preview%20(1).png",

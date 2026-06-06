@@ -157,6 +157,7 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "TechyFusion",
+  alternateName: "Techy Fusion",
   url: "https://techyfusion.in",
   logo: "https://techyfusion.in/logo.png",
   sameAs: [
@@ -221,13 +222,15 @@ export default function HomePage() {
 
         {/* Heading */}
         <h1 className="font-[family-name:var(--font-heading)] italic text-white text-5xl sm:text-6xl lg:text-7xl font-normal leading-tight max-w-4xl">
-          We build software we&apos;re proud of
+          TechyFusion - One Platform for All Your Technology Needs
         </h1>
 
         {/* Subtitle */}
         <p className="mt-6 text-white/70 text-lg md:text-xl max-w-2xl leading-relaxed font-[family-name:var(--font-body)]">
-          TechyFusion is a boutique software studio crafting beautiful web apps,
-          mobile experiences, and AI-powered solutions.
+          TechyFusion, also known as Techy Fusion, is a software development
+          company specializing in Web Development, Mobile App Development, AI
+          Solutions, Cloud Services, Custom Software Development, and Digital
+          Marketing.
         </p>
 
         {/* CTA */}

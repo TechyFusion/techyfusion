@@ -87,7 +87,7 @@ export default function AboutPage() {
             </span>
           </h1>
           <p className="text-slate-300 text-lg md:text-xl font-light leading-relaxed">
-            TechyFusion was founded to help companies build faster and scale better by unifying premium design, robust engineering, and AI automation.
+            TechyFusion (also known as Techy Fusion) is a software development company providing Web Development, AI Solutions, Mobile App Development, and Cloud Services.
           </p>
         </div>
       </section>
@@ -100,7 +100,7 @@ export default function AboutPage() {
           <div className="lg:col-span-7 space-y-6 relative z-10">
             <h2 className="text-2xl md:text-3xl font-bold text-white">The TechyFusion Journey</h2>
             <p className="text-slate-300 text-sm md:text-base leading-relaxed">
-              We realized that businesses looking to build web applications, connect mobile apps, automate client service with AI, and launch digital marketing campaigns were dealing with 3-4 separate agencies. This led to massive code discrepancies, broken integrations, misaligned schedules, and ballooning budgets.
+              TechyFusion, also known as Techy Fusion, helps businesses build web applications, connect mobile apps, automate client service with AI, and launch digital marketing campaigns without dealing with 3-4 separate agencies. This reduces code discrepancies, broken integrations, misaligned schedules, and ballooning budgets.
             </p>
             <p className="text-slate-300 text-sm md:text-base leading-relaxed">
               We constructed **TechyFusion** to solve this. By compiling a dedicated panel of experts in frontend code, database management, LLM orchestration, and devops, we provide all technical capabilities under a single roof. This means faster development timelines, cohesive designs, unified security patterns, and predictable project quotes.
