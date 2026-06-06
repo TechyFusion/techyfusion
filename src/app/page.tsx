@@ -316,14 +316,35 @@ export default function HomePage() {
           </div>
 
           {/* Horizontal Scrolling Reviews */}
-          <div className="mt-12 relative">
+          <div className="mt-12 relative overflow-hidden flex gap-[20px] marquee-wrapper py-2">
             {/* Edge fade gradients */}
-            <div className="absolute top-0 bottom-2 left-0 w-12 bg-gradient-to-r from-cream to-transparent z-10 pointer-events-none" />
-            <div className="absolute top-0 bottom-2 right-0 w-12 bg-gradient-to-l from-cream to-transparent z-10 pointer-events-none" />
+            <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-cream to-transparent z-10 pointer-events-none" />
+            <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-cream to-transparent z-10 pointer-events-none" />
 
-            <div className="scroll-row px-2">
+            {/* First Set */}
+            <div className="flex shrink-0 gap-[20px] animate-marquee">
               {reviews.map((review, idx) => (
-                <div key={idx} className="review-card">
+                <div key={`review-1-${idx}`} className="review-card">
+                  {/* Stars */}
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-4 h-4 fill-star-gold text-star-gold"
+                      />
+                    ))}
+                  </div>
+                  <p className="text-text-muted text-sm leading-relaxed">
+                    &ldquo;{review.text}&rdquo;
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Second Set for seamless infinite scroll */}
+            <div className="flex shrink-0 gap-[20px] animate-marquee" aria-hidden="true">
+              {reviews.map((review, idx) => (
+                <div key={`review-2-${idx}`} className="review-card">
                   {/* Stars */}
                   <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (

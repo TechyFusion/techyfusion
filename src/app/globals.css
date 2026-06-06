@@ -92,23 +92,18 @@ body {
   flex-shrink: 0;
 }
 
-/* === Horizontal Scroll Row === */
-.scroll-row {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding-bottom: 8px;
+/* === Horizontal Marquee Animation === */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% - 20px)); } /* 20px is the gap between groups */
 }
 
-.scroll-row::-webkit-scrollbar {
-  display: none;
+.animate-marquee {
+  animation: marquee 35s linear infinite;
 }
 
-.scroll-row>* {
-  scroll-snap-align: start;
+.marquee-wrapper:hover .animate-marquee {
+  animation-play-state: paused;
 }
 
 /* === Star Twinkle Animation === */
