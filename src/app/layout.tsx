@@ -1,26 +1,19 @@
 import type { Metadata } from "next";
-import { DM_Sans, EB_Garamond, Inter } from "next/font/google";
+import { Geist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
-const dmSans = DM_Sans({
-  variable: "--font-body",
+// High-end sans-serif font for standard text and headings
+const geistSans = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
 });
 
-const ebGaramond = EB_Garamond({
-  variable: "--font-heading",
+// Technical monospace font for labels, metrics, and code
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -52,9 +45,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${ebGaramond.variable} ${inter.variable} h-full scroll-smooth antialiased`}
+      // Force dark mode context and load font variables
+      className={`${geistSans.variable} ${jetBrainsMono.variable} h-full scroll-smooth dark`}
     >
-      <body className="min-h-full flex flex-col bg-cream text-charcoal font-[family-name:var(--font-body)]">
+      <body className="min-h-full flex flex-col bg-background text-on-surface font-sans antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Users, Award, ShieldCheck, HeartHandshake, Eye, Target, Sparkles } from "lucide-react";
-import { LinkedinIcon, GithubIcon } from "@/components/BrandIcons";
+import { LinkedinIcon, GithubIcon } from "@/components/layout/BrandIcons";
 
 export default function AboutPage() {
   const values = [
