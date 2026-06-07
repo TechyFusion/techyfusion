@@ -44,7 +44,7 @@ export default function Navbar() {
 
   return (
 
-    <nav className="fixed top-4 left-0 w-full z-50 flex justify-center pointer-events-none px-4">
+    <nav className="fixed top-4 left-0 w-full z-50 flex flex-col items-center pointer-events-none px-4">
       <div
         className={`nav-capsule pointer-events-auto flex items-center justify-between gap-4 md:gap-6 w-full max-w-3xl transition-all duration-300 ${isScrolled ? "is-scrolled" : ""
           }`}
@@ -110,7 +110,7 @@ export default function Navbar() {
 
       {/* Mobile dropdown */}
       <div
-        className={`md:hidden mt-3 bg-white rounded-2xl shadow-xl border border-border-soft overflow-hidden transition-all duration-300 ${isOpen
+        className={`md:hidden mt-3 w-full max-w-3xl pointer-events-auto bg-white rounded-2xl shadow-xl border border-border-soft overflow-hidden transition-all duration-300 ${isOpen
           ? "opacity-100 translate-y-0 max-h-[500px] p-6"
           : "opacity-0 -translate-y-2 max-h-0 p-0 pointer-events-none"
           }`}
