@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Code, Laptop, Cpu, Smartphone, Sparkles, FolderOpen, ExternalLink } from "lucide-react";
 
 export default function PortfolioPage() {
@@ -24,7 +25,8 @@ export default function PortfolioPage() {
       icon: Laptop,
       color: "text-accent-blue",
       client: "ShopperZone Global",
-      metrics: "+140% Sales Volume"
+      metrics: "+140% Sales Volume",
+      image: "/Ecommerce.jpeg"
     },
     {
       title: "School Management System",
@@ -34,7 +36,8 @@ export default function PortfolioPage() {
       icon: Code,
       color: "text-accent-blue",
       client: "Horizon Academy",
-      metrics: "98% Administrative Efficiency"
+      metrics: "98% Administrative Efficiency",
+      image: "/SchoolMgmt.jpeg"
     },
     {
       title: "AI Customer Support Bot",
@@ -44,7 +47,8 @@ export default function PortfolioPage() {
       icon: Cpu,
       color: "text-accent-blue",
       client: "TelcoCorp Customer Care",
-      metrics: "40% Lower Ticket Overhead"
+      metrics: "40% Lower Ticket Overhead",
+      image: "/AIChatbot.jpeg"
     },
     {
       title: "Food Delivery App",
@@ -54,7 +58,8 @@ export default function PortfolioPage() {
       icon: Smartphone,
       color: "text-accent-blue",
       client: "SpeedyBites Delivery",
-      metrics: "12min Average Delivery Time"
+      metrics: "12min Average Delivery Time",
+      image: "/FoodDelivery.jpeg"
     },
     {
       title: "CRM Dashboard Portal",
@@ -64,7 +69,8 @@ export default function PortfolioPage() {
       icon: Code,
       color: "text-accent-blue",
       client: "Apex Enterprise Consulting",
-      metrics: "3x Lead Conversions"
+      metrics: "3x Lead Conversions",
+      image: "/CRM.jpeg"
     },
     {
       title: "Healthcare Patient Portal",
@@ -74,7 +80,8 @@ export default function PortfolioPage() {
       icon: Laptop,
       color: "text-emerald-400",
       client: "CoreHealth Diagnostics",
-      metrics: "Zero Compliance Breaches"
+      metrics: "Zero Compliance Breaches",
+      image: "/Healthcare.jpeg"
     },
     {
       title: "FitTrack Fitness Coach",
@@ -84,7 +91,8 @@ export default function PortfolioPage() {
       icon: Smartphone,
       color: "text-accent-blue",
       client: "PulseFit Analytics",
-      metrics: "50k+ Active Mobile Downloads"
+      metrics: "50k+ Active Mobile Downloads",
+      image: "/Fitness.jpeg"
     },
     {
       title: "AI Voice Booking Agent",
@@ -94,7 +102,8 @@ export default function PortfolioPage() {
       icon: Cpu,
       color: "text-accent-blue",
       client: "Elite Spa & Salon Services",
-      metrics: "90% Appointment Booking Automation"
+      metrics: "90% Appointment Booking Automation",
+      image: "/AIVoiceSupport.jpeg"
     },
   ];
 
@@ -165,19 +174,30 @@ export default function PortfolioPage() {
                 >
                   <div>
                     {/* Visual Graphic Representation */}
-                    <div className="aspect-[4/3] w-full bg-cream/80 border-b border-border-soft relative flex items-center justify-center overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent group-hover:scale-105 transition-transform duration-300 pointer-events-none" />
-                      <div className={`w-16 h-16 rounded-2xl bg-black/5 border border-black/10 flex items-center justify-center ${project.color} group-hover:rotate-6 transition-all duration-300`}>
-                        <IconComp className="w-8 h-8" />
-                      </div>
+                    <div className="aspect-[4/3] w-full bg-cream/80 border-b border-border-soft relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-300">
+                      {project.image ? (
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent group-hover:scale-105 transition-transform duration-300 pointer-events-none" />
+                          <div className={`w-16 h-16 rounded-2xl bg-black/5 border border-black/10 flex items-center justify-center ${project.color} group-hover:rotate-6 transition-all duration-300 relative z-10`}>
+                            <IconComp className="w-8 h-8" />
+                          </div>
+                        </div>
+                      )}
                       
                       {/* Metric Tag */}
-                      <div className="absolute bottom-4 left-4 px-3 py-1 bg-cream/95 border border-black/10 rounded-xl text-xs font-bold text-emerald-400 tracking-wide">
+                      <div className="absolute bottom-4 left-4 px-3 py-1 bg-cream/95 border border-black/10 rounded-xl text-xs font-bold text-emerald-400 tracking-wide z-20">
                         {project.metrics}
                       </div>
 
                       {/* Client Tag */}
-                      <div className="absolute top-4 left-4 px-2.5 py-1 bg-black/5 border border-black/10 rounded-lg text-[10px] text-text-muted font-semibold uppercase tracking-wider">
+                      <div className="absolute top-4 left-4 px-2.5 py-1 bg-black/40 backdrop-blur-md border border-white/10 rounded-lg text-[10px] text-white font-semibold uppercase tracking-wider z-20">
                         Client: {project.client}
                       </div>
                     </div>
