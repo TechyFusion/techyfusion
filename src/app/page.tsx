@@ -155,7 +155,9 @@ const organizationSchema = {
   name: "TechyFusion",
   alternateName: "Techy Fusion",
   url: "https://techyfusion.in",
-  logo: "https://techyfusion.in/logo.png",
+  logo: "https://techyfusion.in/TechyFusion_Updated_Logo-removebg-DARK.png",
+  description:
+    "TechyFusion is a software development company specializing in Web Development, AI Solutions, Mobile App Development, Cloud Services, and Custom Software Development.",
   sameAs: [
     "https://www.linkedin.com/company/techyfusion",
     "https://github.com/TechyFusion",

@@ -24,15 +24,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://techyfusion.in"),
+
   title:
     "TechyFusion | Techy Fusion - Web Development, AI Solutions & Software Company",
+
   description:
     "TechyFusion (Techy Fusion) is a software development company providing Web Development, Mobile App Development, AI Solutions, Cloud Services, Custom Software Development, and Digital Marketing services.",
+
   icons: {
-    icon: "/TechyFusion_Updated_Logo-removebg-DARK.png",
-    shortcut: "/TechyFusion_Updated_Logo-removebg-DARK.png",
-    apple: "/TechyFusion_Updated_Logo-removebg-DARK.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
+
   keywords: [
     "tech solutions",
     "web development",
