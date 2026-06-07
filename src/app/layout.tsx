@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   description:
     "TechyFusion (Techy Fusion) is a software development company providing Web Development, Mobile App Development, AI Solutions, Cloud Services, Custom Software Development, and Digital Marketing services.",
   icons: {
-    icon: "/techy_fusion_logo-removebg-preview%20(1).png",
-    shortcut: "/techy_fusion_logo-removebg-preview%20(1).png",
-    apple: "/techy_fusion_logo-removebg-preview%20(1).png",
+    icon: "/TechyFusion_Updated_Logo-removebg-DARK.png",
+    shortcut: "/TechyFusion_Updated_Logo-removebg-DARK.png",
+    apple: "/TechyFusion_Updated_Logo-removebg-DARK.png",
   },
   keywords: [
     "tech solutions",

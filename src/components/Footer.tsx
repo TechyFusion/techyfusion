@@ -9,12 +9,12 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
           {/* Brand */}
           <div>
-            <div className="w-8 h-8 rounded-full bg-charcoal flex items-center justify-center mb-3 overflow-hidden">
+            <div className="w-10 h-10 rounded-full bg-charcoal flex items-center justify-center mb-3 overflow-hidden p-1">
               <Image
-                src="/techy_fusion%20logo.png"
+                src="/TechyFusion_Updated_Logo-LIGHT.png"
                 alt="TechyFusion"
-                width={32}
-                height={32}
+                width={40}
+                height={40}
                 className="h-full w-full object-contain"
               />
             </div>

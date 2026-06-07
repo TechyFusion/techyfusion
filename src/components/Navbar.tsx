@@ -52,10 +52,15 @@ export default function Navbar() {
         {/* Circle logo */}
         <Link
           href="/"
-          className="w-9 h-9 rounded-full flex items-center justify-center shrink-0 bg-charcoal/10 hover:bg-charcoal/20 transition-colors duration-200"
+          className="w-10 h-10 flex items-center justify-center shrink-0 hover:opacity-80 transition-opacity duration-200"
         >
-          <span className="font-bold text-sm text-charcoal">T</span>
-
+          <Image
+            src="/TechyFusion_Updated_Logo-removebg-DARK.png"
+            alt="TechyFusion Logo"
+            width={40}
+            height={40}
+            className="w-full h-full object-contain"
+          />
         </Link>
 
         {/* Desktop links */}
@@ -69,8 +74,8 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 className={`text-sm font-medium transition-colors duration-200 ${isActive
-                    ? "text-accent-blue"
-                    : "text-charcoal/70 hover:text-charcoal"
+                  ? "text-accent-blue"
+                  : "text-charcoal/70 hover:text-charcoal"
                   }`}
               >
                 {link.name}
@@ -106,8 +111,8 @@ export default function Navbar() {
       {/* Mobile dropdown */}
       <div
         className={`md:hidden mt-3 bg-white rounded-2xl shadow-xl border border-border-soft overflow-hidden transition-all duration-300 ${isOpen
-            ? "opacity-100 translate-y-0 max-h-[500px] p-6"
-            : "opacity-0 -translate-y-2 max-h-0 p-0 pointer-events-none"
+          ? "opacity-100 translate-y-0 max-h-[500px] p-6"
+          : "opacity-0 -translate-y-2 max-h-0 p-0 pointer-events-none"
           }`}
       >
         <div className="space-y-0">
@@ -121,8 +126,8 @@ export default function Navbar() {
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className={`block py-3 font-medium text-base transition-colors duration-200 ${index < navLinks.length - 1
-                    ? "border-b border-border-lighter"
-                    : ""
+                  ? "border-b border-border-lighter"
+                  : ""
                   } ${isActive
                     ? "text-accent-blue"
                     : "text-charcoal hover:text-accent-blue"
